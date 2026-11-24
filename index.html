@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WMS — Warehouse Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       AUTHENTICATION & LOGIN SCREEN
+       ========================================================= -->
+  <main id="auth-screen" class="auth-screen">
+    <section class="auth-card">
+      <div class="auth-brand">
+        <div class="brand-mark">WMS</div>
+        <div>
+          <h1>Warehouse Management</h1>
+          <p>Supabase Edition · Web App</p>
+        </div>
+      </div>
+
+      <div id="auth-setup-note" class="auth-setup-note hidden">
+        <strong>Setup diperlukan:</strong> Isi <code>SUPABASE_URL</code> dan <code>SUPABASE_ANON_KEY</code> pada file <code>config.js</code>.
+      </div>
+
+      <p id="auth-message" class="auth-message">Memverifikasi sesi login...</p>
+
+      <div id="login-form-box" class="hidden">
+        <form id="login-form" class="login-form">
+          <div class="master-field">
+            <label for="login-email">Email Admin</label>
+            <input id="login-email" type="email" placeholder="admin@perusahaan.com" autocomplete="email" required>
+          </div>
+          <div class="master-field">
+            <label for="login-password">Password</label>
+            <input id="login-password" type="password" placeholder="Masukkan password" autocomplete="current-password" required>
+          </div>
+          <button id="login-submit-btn" type="submit" class="btn btn-primary btn-block">
+            Masuk ke WMS
+          </button>
+        </form>
+
+        <div class="login-divider">atau</div>
+
+        <button id="login-google-btn" type="button" class="btn btn-secondary btn-block">
+          Masuk dengan Akun Google
+        </button>
+      </div>
+
+      <button id="auth-switch-account" type="button" class="btn btn-secondary btn-block hidden">
+        Logout / Ganti Akun
+      </button>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       MAIN APPLICATION SHELL
+       ========================================================= -->
+  <div id="app-shell" class="app-shell hidden">
+    <div id="mobile-overlay" class="mobile-overlay"></div>
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-mark">WMS</div>
+        <div>
+          <div class="sidebar-title">Warehouse</div>
+          <div class="sidebar-subtitle">Control System</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Main Navigation">
+        <div class="nav-section-label">Overview</div>
+        <button class="nav-item active" data-page="dashboard" type="button">
+          <span class="nav-icon">◈</span>
+          <span>Dashboard</span>
+        </button>
+
+        <div class="nav-section-label">Operations</div>
+        <button class="nav-item" data-page="master-data" type="button">
+          <span class="nav-icon">▤</span>
+          <span>Master Data</span>
+        </button>
+        <button class="nav-item" data-page="inventory" type="button">
+          <span class="nav-icon">▣</span>
+          <span>Inventory</span>
+        </button>
+        <button class="nav-item" data-page="transactions" type="button">
+          <span class="nav-icon">⇄</span>
+          <span>Transactions</span>
+        </button>
+        <button class="nav-item" data-page="assets" type="button">
+          <span class="nav-icon">▧</span>
+          <span>Asset Management</span>
+        </button>
+
+        <div class="nav-section-label">System</div>
+        <button class="nav-item" data-page="reports" type="button">
+          <span class="nav-icon">▥</span>
+          <span>Reports</span>
+        </button>
+        <button class="nav-item" data-page="settings" type="button">
+          <span class="nav-icon">⚙</span>
+          <span>Settings</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-badge">
+          <div id="user-avatar" class="user-avatar">A</div>
+          <div class="user-meta">
+            <div id="user-name" class="user-name">Admin</div>
+            <div id="user-role" class="user-role">ADMIN</div>
+          </div>
+        </div>
+        <button id="sidebar-logout-btn" type="button" class="btn btn-secondary btn-block">
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <div class="main-area">
+      <header class="mobile-topbar">
+        <button id="sidebar-toggle" class="sidebar-toggle" type="button" aria-label="Toggle Menu">☰</button>
+        <strong>WMS Control</strong>
+        <span></span>
+      </header>
+
+      <div id="page-content" class="page-content"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       PAGE TEMPLATES (Dashboard & Master Data)
+       ========================================================= -->
+  <template id="dashboard-template">
+    <section class="page-heading">
+      <div>
+        <div class="eyebrow">WAREHOUSE OVERVIEW</div>
+        <h1>Dashboard</h1>
+        <p>Monitoring inventory dan asset warehouse.</p>
+      </div>
+      <div class="heading-actions">
+        <span id="dashboard-updated" class="muted">Menunggu data...</span>
+        <button id="refresh-dashboard" class="btn btn-secondary" type="button">↻ Refresh</button>
+      </div>
+    </section>
+
+    <section class="metrics-grid">
+      <article class="metric-card">
+        <div class="metric-icon blue">▤</div>
+        <div class="metric-label">Active Item SKUs</div>
+        <div class="metric-value" id="metric-total-items">0</div>
+        <div class="metric-description">WHAT · Barang terdaftar</div>
+      </article>
+      <article class="metric-card">
+        <div class="metric-icon purple">▣</div>
+        <div class="metric-label">Registered Units</div>
+        <div class="metric-value" id="metric-tracked-units">0</div>
+        <div class="metric-description">Individual tracked items</div>
+      </article>
+      <article class="metric-card">
+        <div class="metric-icon orange">!</div>
+        <div class="metric-label">Low Stock Items</div>
+        <div class="metric-value" id="metric-low-stock">0</div>
+        <div class="metric-description">HOW MUCH · At or below minimum</div>
+      </article>
+      <article class="metric-card">
+        <div class="metric-icon green">◎</div>
+        <div class="metric-label">Assigned Units</div>
+        <div class="metric-value" id="metric-assigned-units">0</div>
+        <div class="metric-description">WHO · Sedang digunakan</div>
+      </article>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="panel transaction-panel">
+        <div class="panel-header">
+          <div>
+            <h2>Recent Transactions</h2>
+            <p>Aktivitas transaksi warehouse terbaru.</p>
+          </div>
+          <span class="panel-tag">Latest 8</span>
+        </div>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Document</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Created By</th>
+              </tr>
+            </thead>
+            <tbody id="recent-transactions-body">
+              <tr>
+                <td colspan="5" class="empty-state">Belum ada transaksi.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="panel alert-panel">
+        <div class="panel-header">
+          <div>
+            <h2>Stock Alerts</h2>
+            <p>Consumable yang perlu diperhatikan.</p>
+          </div>
+        </div>
+        <div id="low-stock-list">
+          <div class="empty-state">Belum ada data stok.</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="dashboard-grid secondary-grid">
+      <article class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Inventory Control</h2>
+            <p>HOW MUCH &amp; WHERE</p>
+          </div>
+          <span class="info-icon">▤</span>
+        </div>
+        <p class="panel-description">
+          Pantau jumlah stok berdasarkan SKU, status barang, dan lokasi penyimpanan hingga level rack.
+        </p>
+      </article>
+      <article class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Asset Accountability</h2>
+            <p>WHAT &amp; WHO</p>
+          </div>
+          <span class="info-icon">◎</span>
+        </div>
+        <p class="panel-description">
+          Telusuri identitas setiap unit, kondisi, lokasi, custodian, dan riwayat perpindahannya.
+        </p>
+      </article>
+    </section>
+
+    <div id="dashboard-error" class="error-banner hidden"></div>
+  </template>
+
+  <template id="master-data-template">
+    <section class="page-heading">
+      <div>
+        <div class="eyebrow">MASTER DATA MANAGEMENT</div>
+        <h1>Master Data</h1>
+        <p>Kelola identitas barang, satuan, dan lokasi warehouse.</p>
+      </div>
+    </section>
+
+    <div id="master-notice" class="master-notice hidden" role="status" aria-live="polite"></div>
+
+    <section class="panel master-container">
+      <div class="master-toolbar">
+        <div class="master-tabs">
+          <button class="master-tab active" data-master-tab="categories" type="button">Categories</button>
+          <button class="master-tab" data-master-tab="uom" type="button">Unit of Measurement</button>
+          <button class="master-tab" data-master-tab="locations" type="button">Locations</button>
+        </div>
+        <div class="master-actions">
+          <input type="search" id="master-search" class="master-search" placeholder="Search data..." autocomplete="off">
+          <button type="button" id="master-add-button" class="btn btn-primary">+ Add Category</button>
+        </div>
+      </div>
+
+      <div class="master-list-info">
+        <div>
+          <strong id="master-list-title">Categories</strong>
+          <span id="master-total" class="master-count">0 records</span>
+        </div>
+        <button type="button" id="master-reload" class="btn btn-secondary">↻ Refresh</button>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="data-table master-table">
+          <thead id="master-table-head"></thead>
+          <tbody id="master-table-body">
+            <tr>
+              <td colspan="7" class="empty-state">Memuat data...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div id="master-modal" class="modal-overlay hidden">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="master-modal-title">
+        <div class="modal-header">
+          <div>
+            <h2 id="master-modal-title">Add Category</h2>
+            <p id="master-modal-description">Masukkan informasi master data.</p>
+          </div>
+          <button type="button" id="master-modal-close" class="modal-close" aria-label="Close modal">×</button>
+        </div>
+        <div id="master-modal-notice" class="master-notice hidden" role="alert" aria-live="assertive"></div>
+        <form id="master-form">
+          <input type="hidden" id="master-record-id">
+          <div id="master-form-fields"></div>
+          <div class="modal-actions">
+            <button type="button" id="master-modal-cancel" class="btn btn-secondary">Cancel</button>
+            <button type="submit" id="master-save-button" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </template>
+
+  <!-- =========================================================
+       SCRIPTS
+       ========================================================= -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="js/supabase-bridge.js"></script>
+  <script src="js/master-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
