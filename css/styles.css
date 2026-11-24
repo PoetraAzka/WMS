@@ -58,7 +58,7 @@ body {
   justify-content: center;
   padding: 24px;
   background:
-    radial-gradient(circle at 20% 20%, rgba(38, 244, 208, 0.08), transparent 45%),
+    radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.08), transparent 45%),
     radial-gradient(circle at 80% 80%, rgba(155, 124, 255, 0.08), transparent 45%),
     var(--bg);
 }
@@ -86,8 +86,8 @@ body {
   border-radius: 10px;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, rgba(38, 244, 208, 0.22), rgba(38, 244, 208, 0.05));
-  border: 1px solid rgba(38, 244, 208, 0.35);
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.22), rgba(79, 70, 229, 0.05));
+  border: 1px solid rgba(79, 70, 229, 0.35);
   color: var(--cyan);
   font-family: "JetBrains Mono", monospace;
   font-weight: 700;
@@ -250,7 +250,7 @@ body {
 
 .nav-item.active {
   background: var(--cyan-soft);
-  border-color: rgba(38, 244, 208, 0.25);
+  border-color: rgba(79, 70, 229, 0.25);
   color: var(--cyan);
 }
 
@@ -379,7 +379,7 @@ body {
 .btn-primary {
   background: var(--cyan);
   border-color: var(--cyan);
-  color: #051210;
+  color: #ffffff;
 }
 
 .btn-primary:hover:not(:disabled) {
@@ -456,7 +456,7 @@ body {
   gap: 12px;
   padding: 16px 20px;
   border-bottom: 1px solid var(--line);
-  background: linear-gradient(90deg, rgba(38, 244, 208, 0.035), transparent 60%);
+  background: linear-gradient(90deg, rgba(79, 70, 229, 0.035), transparent 60%);
 }
 
 .panel-header h2 {
@@ -508,7 +508,7 @@ body {
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: 13px;
-  background: linear-gradient(145deg, rgba(38, 244, 208, 0.04), var(--raised) 45%, var(--surface));
+  background: linear-gradient(145deg, rgba(79, 70, 229, 0.04), var(--raised) 45%, var(--surface));
 }
 
 .metric-icon {
@@ -521,7 +521,7 @@ body {
   margin-bottom: 12px;
 }
 
-.metric-icon.blue { background: rgba(38, 244, 208, 0.14); color: var(--cyan); }
+.metric-icon.blue { background: rgba(79, 70, 229, 0.14); color: var(--cyan); }
 .metric-icon.purple { background: rgba(187, 166, 255, 0.15); color: var(--purple); }
 .metric-icon.orange { background: rgba(255, 195, 107, 0.15); color: var(--amber); }
 .metric-icon.green { background: rgba(66, 232, 160, 0.15); color: var(--green); }
@@ -604,7 +604,7 @@ body {
   color: var(--soft);
 }
 
-.status-posted { background: rgba(38, 244, 208, 0.14); color: var(--cyan); }
+.status-posted { background: #eaf8f1; color: #16734f; border: 1px solid #d2efdf; }
 .status-draft { background: rgba(255, 195, 107, 0.14); color: var(--amber); }
 .status-error { background: rgba(255, 141, 153, 0.15); color: var(--red); }
 
@@ -668,8 +668,8 @@ body {
 }
 
 .master-notice.success {
-  border-color: rgba(38, 244, 208, 0.35);
-  background: rgba(38, 244, 208, 0.1);
+  border-color: rgba(79, 70, 229, 0.35);
+  background: rgba(79, 70, 229, 0.1);
   color: var(--cyan);
 }
 
@@ -702,7 +702,7 @@ body {
 
 .master-tab.active {
   background: var(--cyan-soft);
-  border-color: rgba(38, 244, 208, 0.4);
+  border-color: rgba(79, 70, 229, 0.4);
   color: var(--cyan);
 }
 
@@ -742,7 +742,7 @@ body {
 .master-field textarea:focus,
 .login-form input:focus {
   border-color: var(--cyan);
-  box-shadow: 0 0 0 2px rgba(38, 244, 208, 0.12);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.12);
 }
 
 .master-list-info {
@@ -767,7 +767,7 @@ body {
 }
 
 .master-status.active {
-  background: rgba(38, 244, 208, 0.12);
+  background: rgba(79, 70, 229, 0.12);
   color: var(--cyan);
 }
 
@@ -1166,3 +1166,13 @@ input[type="checkbox"], input[type="radio"] { accent-color: #5148d8; }
   }
 }
 
+
+
+/* Cross-module light controls and global component consistency */
+:root { color-scheme: light; }
+input, select, textarea, button { font-family: inherit; }
+input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+  color-scheme: light;
+}
+button:disabled { cursor: not-allowed; opacity: .58; }
+.page-content { background: var(--bg); }
