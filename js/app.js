@@ -1507,31 +1507,7 @@
       .wms-inv-toast button{margin-left:auto;border:0;background:transparent;color:inherit;font-size:15px;cursor:pointer}
       @media(max-width:1050px){.wms-inv-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.wms-inv-panel-head{align-items:flex-start;flex-direction:column}}
       @media(max-width:600px){.wms-inv-page{padding:20px 14px 34px}.wms-inv-heading{align-items:flex-start;flex-direction:column}.wms-inv-heading h1{font-size:21px}.wms-inv-stats{gap:8px}.wms-inv-stat{padding:12px}.wms-inv-stat strong{font-size:20px}.wms-inv-filters{width:100%}.wms-inv-filters input,.wms-inv-filters select{max-width:none;flex:1 1 140px}}
-
-      /* CORPORATE INDIGO LIGHT THEME OVERRIDES */
-      .wms-inv-page{
-        --inv-bg:#f5f6fb;--inv-surface:#ffffff;--inv-raised:#f8f9fd;--inv-hover:#f2f2fc;
-        --inv-line:#e5e7f0;--inv-line-bright:#d7d9e8;--inv-text:#202238;--inv-soft:#4b5068;
-        --inv-muted:#777d95;--inv-cyan:#4f46e5;color-scheme:light;
-      }
-      .wms-inv-stat{background:linear-gradient(145deg,rgba(79,70,229,.035),var(--inv-raised) 42%,var(--inv-surface));box-shadow:0 3px 12px rgba(31,41,85,.045)}
-      .wms-inv-stat.alert-stat strong{color:#a66b12}
-      .wms-inv-panel{box-shadow:0 3px 12px rgba(31,41,85,.045)}
-      .wms-inv-panel-head{background:linear-gradient(90deg,rgba(79,70,229,.035),transparent 55%)}
-      .wms-inv-filters input,.wms-inv-filters select{color-scheme:light}
-      .wms-inv-filters input:focus,.wms-inv-filters select:focus{box-shadow:0 0 0 3px rgba(79,70,229,.10)}
-      .wms-inv-table td{border-bottom-color:#eff0f5}
-      .wms-inv-health.HEALTHY,.wms-inv-stock-status.AVAILABLE{background:#eaf8f1;color:#16734f}
-      .wms-inv-health.LOW{background:#fff6e7;color:#98600c}
-      .wms-inv-health.NO_AVAILABLE,.wms-inv-stock-status.QUARANTINE{background:#fff0f1;color:#c43e50}
-      .wms-inv-stock-status.RESERVED{background:#f1edff;color:#6841b8}
-      .wms-inv-stock-status.IN_TRANSIT{background:#fff6e7;color:#98600c}
-      .wms-inv-qty-negative{color:#c43e50!important}
-      .wms-inv-footnote{background:#fafaff}
-      .wms-inv-alert{border-color:#f2cbd1;background:#fff2f3;color:#bd3c4d}
-      .wms-inv-toast{border-color:#ccebdc;border-left-color:#16845b;background:#effaf4;color:#176344;box-shadow:0 10px 28px rgba(31,41,85,.12)}
-
-`;
+    `;
     document.head.appendChild(style);
 
   }
@@ -2436,47 +2412,7 @@
       .wms-tx-toast button{margin-left:auto;border:0;background:transparent;color:inherit;font-size:15px;cursor:pointer}
       @media(max-width:900px){.wms-tx-page{padding:20px 16px 34px}.wms-tx-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.wms-tx-panel-head{align-items:flex-start;flex-direction:column}.wms-tx-line-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
       @media(max-width:600px){.wms-tx-heading{align-items:flex-start;flex-direction:column}.wms-tx-heading h1{font-size:21px}.wms-tx-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.wms-tx-stat{padding:12px}.wms-tx-stat strong{font-size:20px}.wms-tx-filters{width:100%}.wms-tx-filters select,.wms-tx-filters input{max-width:none;flex:1 1 130px}.wms-tx-form-grid{grid-template-columns:1fr;padding:15px}.wms-tx-field.full{grid-column:auto}.wms-tx-info{margin-left:15px;margin-right:15px}.wms-tx-detail-heading{margin:18px 15px 10px}.wms-tx-detail-lines{padding:0 15px 15px}.wms-tx-line-grid,.wms-tx-line-grid.two,.wms-tx-line-grid.three{grid-template-columns:1fr 1fr}.wms-tx-view-meta{grid-template-columns:1fr 1fr}.wms-tx-modal{padding:8px}.wms-tx-modal-card{max-height:calc(100vh - 16px)}.wms-tx-modal-header,.wms-tx-modal-footer{padding-left:15px;padding-right:15px}}
-
-      /* CORPORATE INDIGO LIGHT THEME OVERRIDES */
-      .wms-tx-page{
-        --tx-bg:#f5f6fb;--tx-surface:#ffffff;--tx-raised:#f8f9fd;--tx-hover:#f2f2fc;
-        --tx-line:#e5e7f0;--tx-line-bright:#d7d9e8;--tx-text:#202238;--tx-soft:#4b5068;
-        --tx-muted:#777d95;--tx-cyan:#4f46e5;color-scheme:light;
-      }
-      .wms-tx-button.primary{background:#5148d8;border-color:#5148d8;color:#ffffff}
-      .wms-tx-button.primary:hover:not(:disabled){background:#4338ca;border-color:#4338ca;filter:none}
-      .wms-tx-stat{background:linear-gradient(145deg,rgba(79,70,229,.035),var(--tx-raised) 42%,var(--tx-surface));box-shadow:0 3px 12px rgba(31,41,85,.045)}
-      .wms-tx-panel{box-shadow:0 3px 12px rgba(31,41,85,.045)}
-      .wms-tx-panel-head{background:linear-gradient(90deg,rgba(79,70,229,.035),transparent 55%)}
-      .wms-tx-filters select,.wms-tx-filters input{color-scheme:light}
-      .wms-tx-filters select:focus,.wms-tx-filters input:focus{box-shadow:0 0 0 3px rgba(79,70,229,.10)}
-      .wms-tx-table td{border-bottom-color:#eff0f5}
-      .wms-tx-status.DRAFT,.wms-tx-status.POSTING{background:#fff6e7;color:#98600c}
-      .wms-tx-status.POSTED{background:#eaf8f1;color:#16734f}
-      .wms-tx-status.CANCELLED{background:#fff0f1;color:#c43e50}
-      .wms-tx-row-action{background:#ffffff;color:#5148d8}
-      .wms-tx-row-action:hover{background:#f3f2ff;border-color:#5148d8}
-      .wms-tx-footnote{background:#fafaff}
-      .wms-tx-alert.error{background:#fff2f3;border-color:#f2cbd1;color:#bd3c4d}
-      .wms-tx-alert.warning{background:#fff8eb;border-color:#f2dfb8;color:#96600d}
-      .wms-tx-info{background:#f1f0ff;border-color:#d8d5ff;color:#4b5068}
-      .wms-tx-modal{--tx-bg:#ffffff;--tx-surface:#ffffff;--tx-raised:#f8f9fd;--tx-hover:#f2f2fc;--tx-line:#e5e7f0;--tx-line-bright:#d7d9e8;--tx-text:#202238;--tx-soft:#4b5068;--tx-muted:#777d95;--tx-cyan:#4f46e5;color-scheme:light;background:rgba(24,27,54,.42)}
-      .wms-tx-modal-card{box-shadow:0 24px 70px rgba(25,28,65,.20)}
-      .wms-tx-modal-header{background:linear-gradient(90deg,rgba(79,70,229,.045),transparent 65%)}
-      .wms-tx-icon-button:hover{background:#f3f2ff}
-      .wms-tx-field input,.wms-tx-field select,.wms-tx-field textarea,.wms-tx-line input,.wms-tx-line select{color-scheme:light}
-      .wms-tx-field input::placeholder,.wms-tx-field textarea::placeholder,.wms-tx-line input::placeholder{color:#9a9eb0}
-      .wms-tx-field input[readonly],.wms-tx-line input[readonly]{color:#777d95;background:#f1f2f8}
-      .wms-tx-line{background:#fafaff}
-      .wms-tx-line-grid,.wms-tx-view-meta div{background:transparent}
-      .wms-tx-modal-footer{background:#fafaff}
-      .wms-tx-remove-line{color:#c43e50}
-      .wms-tx-view-meta div{background:#fafaff}
-      .wms-tx-toast{background:#effaf4;border-color:#ccebdc;border-left-color:#16845b;color:#176344;box-shadow:0 10px 28px rgba(31,41,85,.12)}
-      .wms-tx-toast.warning{background:#fff8eb;border-color:#f2dfb8;border-left-color:#b7791f;color:#96600d}
-      .wms-tx-toast.error{background:#fff2f3;border-color:#f2cbd1;border-left-color:#dc4658;color:#bd3c4d}
-
-`;
+    `;
     document.head.appendChild(style);
 
   }
@@ -4133,98 +4069,7 @@
       .wms-asset-history{width:100%;border-collapse:collapse;min-width:620px}.wms-asset-history th{position:sticky;top:0;background:#172231;color:#8596a9;text-align:left;padding:8px;font:500 8px 'JetBrains Mono',monospace}.wms-asset-history td{padding:8px;border-top:1px solid #253242;color:#c0cbd6;font-size:9px;vertical-align:top}
       @media(max-width:1050px){.wms-asset-scan-panel{grid-template-columns:1fr}.wms-asset-scan-status{grid-column:1}.wms-asset-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.wms-asset-panel-head{align-items:flex-start;flex-direction:column}.wms-asset-filters{width:100%}.wms-asset-filters input{flex:1;width:auto}}
       @media(max-width:680px){.wms-asset-scan-panel{padding:13px}.wms-asset-scan-form{flex-direction:column}.wms-asset-scan-form button{width:100%}.wms-asset-label-toolbar{align-items:flex-start;flex-direction:column}.wms-asset-qr-panel{grid-template-columns:1fr}.wms-asset-qr-preview{margin:0 auto}.wms-asset-qr-meta{text-align:center}.wms-asset-qr-meta code{text-align:left}.wms-asset-qr-actions{justify-content:center}.wms-asset-page{padding:18px 12px 30px}.wms-asset-heading{align-items:flex-start;flex-direction:column}.wms-asset-heading-actions{width:100%}.wms-asset-heading-actions button{flex:1}.wms-asset-stats{gap:8px}.wms-asset-stat{padding:12px;min-height:95px}.wms-asset-stat strong{font-size:20px}.wms-asset-filters{display:grid;grid-template-columns:1fr}.wms-asset-filters input,.wms-asset-filters select{width:100%}.wms-asset-form-grid{grid-template-columns:1fr}.wms-asset-field.full{grid-column:auto}.wms-asset-modal{padding:8px}.wms-asset-modal-card{padding:14px;max-height:95vh}.wms-asset-detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.wms-asset-unit-row{grid-template-columns:24px minmax(0,1fr) minmax(0,1fr) 28px}.wms-asset-unit-row .unit-notes{grid-column:2/4}.wms-asset-unit-row button{grid-column:4;grid-row:1/3}.wms-asset-toast-stack{left:10px;right:10px;top:75px}.wms-asset-toast{max-width:none}}
-
-      /* CORPORATE INDIGO LIGHT THEME OVERRIDES */
-      .wms-asset-page{color:#202238;background:#f5f6fb;color-scheme:light}
-      .wms-asset-heading h1{color:#252743}
-      .wms-asset-eyebrow{color:#5148d8}
-      .wms-asset-heading p{color:#687087}
-      .wms-asset-scan-panel{border-color:#d9d7fb;background:linear-gradient(120deg,#f0efff,#fafaff)}
-      .wms-asset-scan-eyebrow{color:#5148d8}
-      .wms-asset-scan-copy h2{color:#292b49}
-      .wms-asset-scan-copy p{color:#687087}
-      .wms-asset-scan-form input{border-color:#d7d9e8;background:#ffffff;color:#292b49;color-scheme:light}
-      .wms-asset-scan-form input::placeholder{color:#9297aa}
-      .wms-asset-scan-form input:focus{border-color:#7169e8;box-shadow:0 0 0 3px rgba(79,70,229,.10)}
-      .wms-asset-scan-status{color:#777d95}
-      .wms-asset-scan-status.success{color:#16734f}
-      .wms-asset-scan-status.error{color:#c43e50}
-      .wms-asset-scan-status.busy{color:#98600c}
-      .wms-asset-btn{border-color:#dfe1eb}
-      .wms-asset-btn.primary{background:#5148d8;color:#ffffff;border-color:#5148d8}
-      .wms-asset-btn.primary:hover:not(:disabled){background:#4338ca}
-      .wms-asset-btn.secondary{background:#ffffff;color:#454a63}
-      .wms-asset-btn.secondary:hover:not(:disabled){border-color:#b9b5f5;color:#4f46e5}
-      .wms-asset-alert.error{border-color:#f2cbd1;background:#fff2f3;color:#bd3c4d}
-      .wms-asset-loading{color:#777d95}
-      .wms-asset-stat{border-color:#e7e8f1;background:linear-gradient(145deg,#ffffff,#fafaff);box-shadow:0 3px 12px rgba(31,41,85,.045)}
-      .wms-asset-stat span{color:#626881}
-      .wms-asset-stat strong{color:#242641}
-      .wms-asset-stat small{color:#858aa0}
-      .wms-asset-stat.alert-stat strong{color:#a66b12}
-      .wms-asset-panel{border-color:#e6e7f0;background:#ffffff;box-shadow:0 3px 12px rgba(31,41,85,.045)}
-      .wms-asset-panel-head{border-bottom-color:#ececf3;background:#ffffff}
-      .wms-asset-panel-head h2{color:#292b49}
-      .wms-asset-panel-head p{color:#747a91}
-      .wms-asset-filters input,.wms-asset-filters select,.wms-asset-field input,.wms-asset-field select,.wms-asset-field textarea{border-color:#dfe1eb;background:#ffffff;color:#292b49;color-scheme:light}
-      .wms-asset-filters input::placeholder,.wms-asset-field input::placeholder,.wms-asset-field textarea::placeholder{color:#9a9eb0}
-      .wms-asset-filters input:focus,.wms-asset-filters select:focus,.wms-asset-field input:focus,.wms-asset-field select:focus,.wms-asset-field textarea:focus{border-color:#7169e8;box-shadow:0 0 0 3px rgba(79,70,229,.10)}
-      .wms-asset-table th{background:#f7f7fc;color:#727890;border-bottom-color:#e7e8f0}
-      .wms-asset-table td{border-bottom-color:#eff0f5;color:#4c526a;background:#ffffff}
-      .wms-asset-table tbody tr:hover{background:#f8f8ff}
-      .wms-asset-table .primary-text{color:#292b49}
-      .wms-asset-table .secondary-text{color:#858aa0}
-      .wms-asset-empty{color:#777d95!important}
-      .wms-asset-readonly{border-color:#e1e2ec;color:#727890;background:#fafaff}
-      .wms-asset-footnote{border-top-color:#ececf3;color:#777d95;background:#fafaff}
-      .wms-asset-badge{background:#f1f2f8;color:#555b73}
-      .wms-asset-badge.IN_STOCK{background:#eaf8f1;color:#16734f}
-      .wms-asset-badge.ASSIGNED{background:#f1edff;color:#6841b8}
-      .wms-asset-badge.IN_REPAIR{background:#fff6e7;color:#98600c}
-      .wms-asset-badge.LOST{background:#fff0f1;color:#c43e50}
-      .wms-asset-badge.DISPOSED{background:#f1f2f5;color:#727890}
-      .wms-asset-row-btn{border-color:#dfe1eb;background:#ffffff;color:#5148d8}
-      .wms-asset-row-btn:hover{border-color:#bdb9f4;background:#f6f5ff}
-      .wms-asset-label-toolbar{border-bottom-color:#ececf3;background:#fafaff}
-      .wms-asset-select-visible{color:#626881}
-      .wms-asset-select-visible input,.wms-asset-unit-select{accent-color:#5148d8}
-      .wms-asset-qr-panel{border-color:#e4e5ef;background:#fafaff}
-      .wms-asset-qr-meta .eyebrow{color:#777d95}
-      .wms-asset-qr-meta h3{color:#292b49}
-      .wms-asset-qr-meta p{color:#687087}
-      .wms-asset-qr-meta code{border-color:#d7d9e8;background:#f1f0ff;color:#5148d8}
-      .wms-asset-qr-placeholder{color:#858aa0}
-      .wms-asset-toast{border-color:#ccebdc;background:#effaf4;color:#176344;box-shadow:0 10px 28px rgba(31,41,85,.12)}
-      .wms-asset-toast.warning{background:#fff8eb;border-color:#f2dfb8;color:#96600d}
-      .wms-asset-toast.error{background:#fff2f3;border-color:#f2cbd1;color:#bd3c4d}
-      .wms-asset-modal{background:rgba(24,27,54,.42)}
-      .wms-asset-modal-card{border-color:#e4e5ef;background:#ffffff;box-shadow:0 24px 70px rgba(25,28,65,.20)}
-      .wms-asset-modal-head h2{color:#292b49}
-      .wms-asset-modal-head p{color:#747a91}
-      .wms-asset-icon-btn{border-color:#e5e6ef;background:#f8f8fc;color:#626780}
-      .wms-asset-field{color:#555b73}
-      .wms-asset-unit-entry-head{border-top-color:#ececf3}
-      .wms-asset-unit-entry-head h3{color:#292b49}
-      .wms-asset-unit-entry-head p{color:#777d95}
-      .wms-asset-unit-row{border-color:#e5e7f0;background:#fafaff}
-      .wms-asset-unit-row .row-no{color:#858aa0}
-      .wms-asset-unit-row input{border-color:#dfe1eb;background:#ffffff;color:#292b49;color-scheme:light}
-      .wms-asset-unit-row input:focus{border-color:#7169e8}
-      .wms-asset-unit-row button{border-color:#f0cbd1;background:#fff2f3;color:#c43e50}
-      .wms-asset-modal-actions{border-top-color:#ececf3}
-      .wms-asset-current-unit{border-color:#e4e5ef;background:#f8f9fd;color:#4b5068}
-      .wms-asset-detail-cell{border-color:#e5e7f0;background:#fafaff}
-      .wms-asset-detail-cell span{color:#777d95}
-      .wms-asset-detail-cell strong{color:#292b49}
-      .wms-asset-qr-token{border-color:#d7d9e8;background:#f1f0ff}
-      .wms-asset-qr-token span{color:#777d95}
-      .wms-asset-qr-token code{color:#5148d8}
-      .wms-asset-section-title{color:#292b49}
-      .wms-asset-history-wrap{border-color:#e5e7f0}
-      .wms-asset-history th{background:#f7f7fc;color:#727890}
-      .wms-asset-history td{border-top-color:#eff0f5;color:#4c526a}
-
-`;
+    `;
     document.head.appendChild(style);
   }
 
@@ -4521,20 +4366,29 @@
   }
 
   function printAssetLabels(units) {
-    const list = (units || []).filter(function(unit) { return unit && unit.qr_token; });
+    const list = (units || []).filter(function(unit) {
+      return unit && unit.qr_token;
+    });
+
     if (!list.length) {
       showAssetToast("Tidak ada QR Token yang bisa dicetak.", "warning");
       return;
     }
 
     // Open the print window synchronously while the browser still has the user gesture.
-    const printWindow = window.open("", "_blank", "width=760,height=720");
+    const printWindow = window.open("", "_blank", "width=900,height=760");
     if (!printWindow) {
       showAssetToast("Popup diblokir browser. Izinkan popup untuk mencetak label.", "warning");
       return;
     }
+
     printWindow.document.open();
-    printWindow.document.write("<!DOCTYPE html><html><head><title>WMS Asset Labels</title></head><body style='font-family:Arial,sans-serif;padding:20px'>Mempersiapkan label QR...</body></html>");
+    printWindow.document.write(
+      "<!DOCTYPE html><html lang='id'><head><meta charset='UTF-8'>" +
+      "<meta name='viewport' content='width=device-width,initial-scale=1'>" +
+      "<title>WMS Asset QR Labels</title></head>" +
+      "<body style='font-family:Arial,sans-serif;padding:20px'>Mempersiapkan label QR...</body></html>"
+    );
     printWindow.document.close();
 
     ensureAssetQrLibrary().then(function() {
@@ -4545,27 +4399,131 @@
           '<div class="asset-label-name">' + escapeAssetHtml(unit.item_name || unit.item_code || "Individual Unit") + '</div>',
           '<div class="asset-label-meta">' + escapeAssetHtml(unit.item_code || "") + '</div>',
           '<div class="asset-label-meta">SN: ' + escapeAssetHtml(unit.serial_number || "-") + '</div>',
-          unit.asset_tag ? '<div class="asset-label-meta">Tag: ' + escapeAssetHtml(unit.asset_tag) + '</div>' : ''
+          unit.asset_tag
+            ? '<div class="asset-label-meta">Tag: ' + escapeAssetHtml(unit.asset_tag) + '</div>'
+            : ''
         ].join("");
-        return '<article class="asset-label"><div class="asset-label-qr" role="img" aria-label="QR ' + escapeAssetHtml(unit.unit_code || "unit") + '">' + svg + '</div><div class="asset-label-info">' + info + '<div class="asset-label-footer">WMS ASSET IDENTIFICATION</div></div></article>';
+
+        return (
+          '<article class="asset-label">' +
+            '<div class="asset-label-qr" role="img" aria-label="QR ' +
+              escapeAssetHtml(unit.unit_code || "unit") + '">' + svg +
+            '</div>' +
+            '<div class="asset-label-info">' + info +
+              '<div class="asset-label-footer">WMS ASSET IDENTIFICATION</div>' +
+            '</div>' +
+          '</article>'
+        );
       }).join("");
 
-      const html = '<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WMS Asset Labels</title><style>' +
-        '*{box-sizing:border-box}html,body{margin:0;padding:0;background:#fff;color:#111;font-family:Arial,sans-serif}.print-toolbar{padding:12px 16px;background:#eef2f5;border-bottom:1px solid #d5dce3;display:flex;align-items:center;justify-content:space-between;gap:12px;font:12px Arial,sans-serif}.print-toolbar button{border:0;border-radius:6px;background:#101820;color:white;padding:9px 14px;font-weight:700;cursor:pointer}.print-sheet{display:flex;flex-direction:column;align-items:flex-start}.asset-label{width:50mm;height:30mm;padding:2mm;display:flex;align-items:center;gap:2mm;overflow:hidden;border:0;break-after:page;page-break-after:always;background:#fff}.asset-label:last-child{break-after:auto;page-break-after:auto}.asset-label-qr{width:25mm;height:25mm;flex:0 0 25mm;display:grid;place-items:center}.asset-label-qr svg{display:block;width:25mm;height:25mm}.asset-label-info{min-width:0;flex:1;overflow:hidden}.asset-label-code{font-size:9pt;font-weight:800;line-height:1.15;overflow-wrap:anywhere}.asset-label-name{font-size:7pt;font-weight:700;line-height:1.15;margin-top:1mm;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.asset-label-meta{font-size:5.5pt;line-height:1.2;margin-top:.7mm;overflow-wrap:anywhere}.asset-label-footer{font-size:4.5pt;letter-spacing:.05em;margin-top:1mm;color:#555}@page{size:50mm 30mm;margin:0}@media print{.print-toolbar{display:none}.asset-label{border:0}}' +
-        '</style></head><body><div class="print-toolbar"><span>' + list.length + ' label(s) siap dicetak · Format 50 × 30 mm</span><button type="button" onclick="window.print()">Print Labels</button></div><main class="print-sheet">' + labels + '</main></body></html>';
+      const printCss = [
+        "*{box-sizing:border-box}",
+        "html,body{margin:0;padding:0;background:#eef1f6;color:#111;font-family:Arial,sans-serif}",
+        ".print-toolbar{position:sticky;top:0;z-index:5;padding:14px 18px;background:#fff;border-bottom:1px solid #dce1eb;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font:13px Arial,sans-serif;box-shadow:0 2px 10px rgba(20,30,60,.06)}",
+        ".toolbar-left{display:flex;flex-direction:column;gap:5px}",
+        ".toolbar-title{font-size:14px;font-weight:700;color:#202238}",
+        ".toolbar-subtitle{font-size:12px;color:#647089}",
+        ".toolbar-controls{display:flex;align-items:center;gap:9px;flex-wrap:wrap}",
+        ".toolbar-controls label{font-size:12px;font-weight:700;color:#4b5068}",
+        ".toolbar-controls select{height:38px;min-width:245px;padding:0 10px;border:1px solid #d7d9e8;border-radius:7px;background:#fff;color:#202238;font:12px Arial,sans-serif}",
+        ".toolbar-controls button{border:0;border-radius:7px;background:#5148d8;color:#fff;padding:11px 17px;font-weight:700;cursor:pointer}",
+        ".toolbar-controls button:hover{background:#4338ca}",
+        ".print-sheet{display:flex;flex-direction:column;align-items:center;padding:14px 0 28px;gap:10px}",
+        ".asset-label{display:flex;align-items:center;justify-content:flex-start;gap:4mm;overflow:hidden;background:#fff;border:1px solid #d9dce8;border-radius:1mm;break-after:page;page-break-after:always}",
+        ".asset-label:last-child{break-after:auto;page-break-after:auto}",
+        ".asset-label-qr{display:grid;place-items:center;flex:0 0 auto}",
+        ".asset-label-qr svg{display:block;max-width:100%;max-height:100%;width:100%;height:100%}",
+        ".asset-label-info{min-width:0;flex:1;overflow:hidden;display:flex;flex-direction:column;justify-content:center;text-align:left}",
+        ".asset-label-code{width:100%;font-size:10pt;font-weight:800;line-height:1.2;overflow-wrap:anywhere;word-break:break-word;color:#172033}",
+        ".asset-label-name{width:100%;font-size:8pt;font-weight:700;line-height:1.2;margin-top:1.5mm;overflow-wrap:anywhere;word-break:break-word;color:#27324b}",
+        ".asset-label-meta{width:100%;font-size:6.5pt;line-height:1.25;margin-top:1mm;overflow-wrap:anywhere;word-break:break-word;color:#475569}",
+        ".asset-label-footer{width:100%;font-size:5pt;letter-spacing:.05em;margin-top:2mm;color:#64748b}",
+        ".print-sheet.format-100x50 .asset-label{width:100mm;height:50mm;min-width:100mm;max-width:100mm;min-height:50mm;max-height:50mm;padding:3mm;flex-direction:row}",
+        ".print-sheet.format-100x50 .asset-label-qr{width:42mm;height:42mm;flex-basis:42mm}",
+        ".print-sheet.format-100x50 .asset-label-info{height:100%;padding:1mm 0}",
+        ".print-sheet.format-50x50 .asset-label{width:50mm;height:50mm;min-width:50mm;max-width:50mm;min-height:50mm;max-height:50mm;padding:4mm;flex-direction:column;align-items:center;justify-content:center;gap:0}",
+        ".print-sheet.format-50x50 .asset-label-qr{width:42mm;height:42mm;flex:0 0 42mm}",
+        ".print-sheet.format-50x50 .asset-label-info{display:none}",
+        "@page{size:100mm 50mm;margin:0}",
+        "@media print{html,body{margin:0;padding:0;background:#fff}.print-toolbar{display:none!important}.print-sheet{display:block;padding:0;margin:0;gap:0}.asset-label{margin:0;border:0;border-radius:0;box-shadow:none;break-after:page;page-break-after:always}.asset-label:last-child{break-after:auto;page-break-after:auto}.print-sheet.format-100x50 .asset-label{width:100mm;height:50mm;min-width:100mm;max-width:100mm;min-height:50mm;max-height:50mm;padding:3mm}.print-sheet.format-50x50 .asset-label{width:50mm;height:50mm;min-width:50mm;max-width:50mm;min-height:50mm;max-height:50mm;padding:4mm}}",
+        "@media screen{.print-sheet.format-100x50 .asset-label{box-shadow:0 2px 10px rgba(20,30,60,.10)}.print-sheet.format-50x50 .asset-label{box-shadow:0 2px 10px rgba(20,30,60,.10)}}"
+      ].join("");
+
+      const html = [
+        "<!DOCTYPE html>",
+        "<html lang='id'><head>",
+        "<meta charset='UTF-8'>",
+        "<meta name='viewport' content='width=device-width,initial-scale=1'>",
+        "<title>WMS Asset QR Labels</title>",
+        "<style id='wms-label-print-css'>", printCss, "</style>",
+        "</head><body>",
+        "<div class='print-toolbar'>",
+          "<div class='toolbar-left'>",
+            "<div class='toolbar-title'>WMS Asset QR Labels</div>",
+            "<div class='toolbar-subtitle' id='label-format-description'>" +
+              list.length + " label · 100 × 50 mm · Landscape · QR dan informasi unit</div>",
+          "</div>",
+          "<div class='toolbar-controls'>",
+            "<label for='label-format-select'>Ukuran label</label>",
+            "<select id='label-format-select'>",
+              "<option value='100x50'>100 × 50 mm — Landscape (QR + informasi)</option>",
+              "<option value='50x50'>50 × 50 mm — Square (QR saja)</option>",
+            "</select>",
+            "<button type='button' id='wms-label-print-button'>Print Labels</button>",
+          "</div>",
+        "</div>",
+        "<main class='print-sheet format-100x50' id='wms-label-print-sheet'>",
+          labels,
+        "</main>",
+        "</body></html>"
+      ].join("");
+
       printWindow.document.open();
       printWindow.document.write(html);
       printWindow.document.close();
-      window.setTimeout(function() {
-        try {
-          if (!printWindow.closed) {
-            printWindow.focus();
-            printWindow.print();
-          }
-        } catch (printError) {
-          console.warn('WMS: Auto-print could not start.', printError);
+
+      const select = printWindow.document.getElementById("label-format-select");
+      const sheet = printWindow.document.getElementById("wms-label-print-sheet");
+      const description = printWindow.document.getElementById("label-format-description");
+      const printButton = printWindow.document.getElementById("wms-label-print-button");
+
+      function applySelectedLabelFormat() {
+        if (!select || !sheet) return;
+
+        const format = select.value === "50x50" ? "50x50" : "100x50";
+        sheet.className = "print-sheet format-" + format;
+
+        const printStyle = printWindow.document.getElementById("wms-label-print-css");
+        if (printStyle) {
+          printStyle.textContent = printCss.replace(
+            "@page{size:100mm 50mm;margin:0}",
+            format === "50x50"
+              ? "@page{size:50mm 50mm;margin:0}"
+              : "@page{size:100mm 50mm;margin:0}"
+          );
         }
-      }, 350);
+
+        if (description) {
+          description.textContent = format === "50x50"
+            ? list.length + " label · 50 × 50 mm · Square · QR saja tanpa teks"
+            : list.length + " label · 100 × 50 mm · Landscape · QR dan informasi unit";
+        }
+      }
+
+      if (select) {
+        select.addEventListener("change", applySelectedLabelFormat);
+      }
+
+      if (printButton) {
+        printButton.addEventListener("click", function() {
+          applySelectedLabelFormat();
+          printWindow.focus();
+          printWindow.print();
+        });
+      }
+
+      applySelectedLabelFormat();
+      printWindow.focus();
     }).catch(function(error) {
       try { printWindow.close(); } catch (closeError) {}
       showAssetToast(error.message || "QR Code gagal dibuat.", "error");
