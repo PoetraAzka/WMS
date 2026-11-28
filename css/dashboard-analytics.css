@@ -1,0 +1,112 @@
+/* Dashboard Analytics - isolated styles */
+.dashboard-analytics {
+  margin-top: 18px;
+}
+
+.da-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.da-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.da-select {
+  min-height: 36px;
+  border: 1px solid var(--line-bright);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  padding: 0 30px 0 10px;
+  font: 600 12px "Manrope", sans-serif;
+}
+
+.da-message {
+  display: none;
+  margin: 12px 18px 0;
+  padding: 9px 12px;
+  border-radius: 8px;
+  background: var(--cyan-soft);
+  color: var(--soft);
+  font-size: 12px;
+}
+.da-message.is-visible { display: block; }
+.da-message.is-error {
+  background: rgba(220, 70, 88, 0.09);
+  color: var(--red);
+}
+
+.da-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.da-summary-card {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--surface);
+}
+.da-summary-label { color: var(--muted); font-size: 11px; font-weight: 700; }
+.da-summary-value {
+  margin-top: 5px;
+  color: var(--text);
+  font: 700 23px "JetBrains Mono", monospace;
+}
+
+.da-chart-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.da-chart-panel { min-width: 0; }
+.da-chart-body { padding: 16px 18px 18px; }
+.da-trend-chart { width: 100%; min-height: 210px; }
+.da-trend-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.da-gridline { stroke: var(--line); stroke-width: 1; }
+.da-axis-label { fill: var(--muted); font: 10px "Manrope", sans-serif; }
+.da-legend { display: flex; gap: 12px 16px; flex-wrap: wrap; margin-top: 10px; }
+.da-legend-item { display: inline-flex; align-items: center; gap: 6px; color: var(--soft); font-size: 11px; }
+.da-legend-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.da-empty { display: grid; min-height: 150px; place-items: center; padding: 20px; color: var(--muted); text-align: center; font-size: 12px; }
+
+.da-bar-list { display: flex; flex-direction: column; gap: 17px; }
+.da-bar-row { min-width: 0; }
+.da-bar-top { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 7px; }
+.da-bar-label { color: var(--soft); font-size: 12px; }
+.da-bar-value { color: var(--text); font: 700 12px "JetBrains Mono", monospace; }
+.da-bar-track { height: 9px; overflow: hidden; border-radius: 99px; background: var(--raised); }
+.da-bar-fill { height: 100%; min-width: 0; border-radius: inherit; background: var(--cyan); transition: width .25s ease; }
+.da-bar-fill.status-reserved { background: #8b5cf6; }
+.da-bar-fill.status-quarantine { background: #d18a28; }
+.da-bar-fill.status-in_transit { background: #64748b; }
+.da-bar-fill.status-in_stock { background: #2563eb; }
+.da-bar-fill.status-assigned { background: #15966a; }
+.da-bar-fill.status-in_repair { background: #d18a28; }
+.da-bar-fill.status-lost { background: #dc4658; }
+.da-bar-fill.status-disposed { background: #64748b; }
+.da-panel-footnote { margin-top: 14px; color: var(--muted); font-size: 10px; }
+.da-period-label { color: var(--muted); font-size: 11px; }
+.da-updated { color: var(--muted); font-size: 10px; }
+
+@media (max-width: 1050px) {
+  .da-chart-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .da-summary-grid { grid-template-columns: 1fr; gap: 8px; }
+  .da-summary-card { padding: 11px 13px; }
+  .da-summary-value { font-size: 20px; }
+  .da-controls { width: 100%; }
+  .da-select { flex: 1; }
+  .da-controls .btn { flex: 1; }
+  .da-chart-body { padding: 12px; }
+}
