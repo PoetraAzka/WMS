@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dashboard-analytics.css">
 </head>
 <body>
 
@@ -246,6 +247,87 @@
       </article>
     </section>
 
+
+    <section id="dashboard-analytics" class="dashboard-analytics" aria-label="Dashboard analytics">
+      <div class="panel">
+        <div class="panel-header da-toolbar">
+          <div>
+            <h2>Warehouse Analytics</h2>
+            <p>Ringkasan aktivitas transaksi, saldo inventory, dan status asset.</p>
+          </div>
+          <div class="da-controls">
+            <label class="muted" for="dashboard-analytics-period">Periode</label>
+            <select id="dashboard-analytics-period" class="da-select" data-period>
+              <option value="7">7 hari</option>
+              <option value="30" selected>30 hari</option>
+              <option value="90">90 hari</option>
+            </select>
+            <button type="button" class="btn btn-secondary" data-analytics-refresh>↻ Refresh Analytics</button>
+          </div>
+        </div>
+        <div class="da-message" data-analytics-message role="status" aria-live="polite"></div>
+        <div class="da-chart-body">
+          <div class="da-period-label" data-period-label>Memuat periode...</div>
+          <div class="da-summary-grid">
+            <div class="da-summary-card">
+              <div class="da-summary-label">Total Transaksi POSTED</div>
+              <div class="da-summary-value" data-total-transactions>0</div>
+            </div>
+            <div class="da-summary-card">
+              <div class="da-summary-label">Total Saldo Inventory</div>
+              <div class="da-summary-value" data-total-stock>0</div>
+            </div>
+            <div class="da-summary-card">
+              <div class="da-summary-label">Total Unit Individual</div>
+              <div class="da-summary-value" data-total-units>0</div>
+            </div>
+          </div>
+          <div class="da-updated" data-analytics-updated>Menunggu data...</div>
+        </div>
+      </div>
+
+      <div class="da-chart-grid">
+        <article class="panel da-chart-panel">
+          <div class="panel-header">
+            <div>
+              <h2>Transaction Activity Trend</h2>
+              <p>Jumlah dokumen POSTED per hari berdasarkan jenis transaksi.</p>
+            </div>
+          </div>
+          <div class="da-chart-body">
+            <div class="da-trend-chart" data-trend-chart></div>
+            <div class="da-legend" data-trend-legend></div>
+          </div>
+        </article>
+
+        <article class="panel da-chart-panel">
+          <div class="panel-header">
+            <div>
+              <h2>Inventory by Stock Status</h2>
+              <p>Total kuantitas berdasarkan status stok.</p>
+            </div>
+          </div>
+          <div class="da-chart-body">
+            <div class="da-bar-list" data-stock-chart></div>
+            <div class="da-panel-footnote">Sumber: inventory_balance. Unit individual dipantau pada grafik status asset.</div>
+          </div>
+        </article>
+      </div>
+
+      <article class="panel da-chart-panel">
+        <div class="panel-header">
+          <div>
+            <h2>Asset Status Distribution</h2>
+            <p>Jumlah unit individual berdasarkan status terkini.</p>
+          </div>
+        </div>
+        <div class="da-chart-body">
+          <div class="da-bar-list" data-unit-chart></div>
+          <div class="da-panel-footnote">Sumber: unit_register. Grafik ini menunjukkan status saat ini, bukan histori pergerakan.</div>
+        </div>
+      </article>
+    </section>
+
     <div id="dashboard-error" class="error-banner hidden"></div>
   </template>
 
@@ -323,5 +405,6 @@
   <script src="js/supabase-bridge.js"></script>
   <script src="js/master-data.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/dashboard-analytics.js"></script>
 </body>
 </html>
